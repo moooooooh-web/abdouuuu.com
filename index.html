@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cinertrix | Video Editing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --main-bg: #D6DAD9;
+      --accent: #768A96;
+      --light-bg: #E6E6E6;
+      --dark-text: #44576D;
+      --highlight: #AAC7D8;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: linear-gradient(-45deg, var(--main-bg), var(--highlight), var(--accent));
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: var(--dark-text);
+      padding: 2rem;
+    }
+
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    header {
+      background-color: rgba(118, 138, 150, 0.9);
+      padding: 3rem 2rem;
+      text-align: center;
+      animation: slideDown 1s ease-out;
+      border-radius: 1rem;
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: white;
+    }
+
+    header p {
+      font-size: 1.5rem;
+      color: var(--highlight);
+    }
+
+    section {
+      padding: 2rem;
+      margin: 2rem auto;
+      border-radius: 1rem;
+      max-width: 1000px;
+      background-color: var(--light-bg);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .about h2, .skills h2, .projects h2 {
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .about p, .skills ul, .projects .project {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--dark-text);
+    }
+
+    .skills ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .skills li::before {
+      content: "\2713";
+      color: var(--accent);
+      margin-left: 0.5rem;
+    }
+
+    .contact-button {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background-color: var(--accent);
+      color: white;
+      text-decoration: none;
+      font-size: 1.2rem;
+      border-radius: 1rem;
+      transition: background-color 0.3s ease, transform 0.3s;
+    }
+
+    .contact-button:hover {
+      background-color: var(--dark-text);
+      transform: scale(1.05);
+    }
+
+    .projects .project {
+      background-color: var(--main-bg);
+      margin-bottom: 1rem;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: var(--dark-text);
+      color: white;
+      border-radius: 1rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .lang-btn {
+      padding: 10px 20px;
+      background-color: var(--dark-text);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 10px;
+    }
+
+    section:hover, .project:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <button class="lang-btn" onclick="changeLanguage('en')">English</button>
+  <button class="lang-btn" onclick="changeLanguage('ar')">عربي</button>
+
+  <header>
+    <h1 id="header-title">Cinertrix</h1>
+    <p id="header-desc">محرر فيديو مبدع وموهوب</p>
+  </header>
+
+  <section class="about">
+    <h2 id="about-title">من أنا؟</h2>
+    <p id="about-desc">
+      اسمي Cinertrix وأنا متخصص في تحرير الفيديو وصناعة المحتوى البصري. أتميز بتحويل المشاهد العادية إلى قصص مرئية مذهلة تجذب الانتباه وتُعبّر عن الأفكار بأسلوب احترافي وجذاب.
+    </p>
+    <a id="contact-btn" class="contact-button" href="https://wa.me/213553283413" target="_blank">اتصل بي مباشرة</a>
+  </section>
+
+  <section class="skills">
+    <h2 id="skills-title">المهارات</h2>
+    <ul id="skills-list">
+      <li>مونتاج احترافي باستخدام Adobe Premiere Pro</li>
+      <li>تحريك الرسوم باستخدام After Effects</li>
+      <li>تحسين الألوان والمؤثرات البصرية</li>
+      <li>إعداد الفيديوهات للسوشيال ميديا</li>
+      <li>تحرير فيديوهات الأنمي</li>
+      <li>كتابة النصوص للمقاطع القصيرة</li>
+      <li>دمج الصوت مع الصورة باحترافية</li>
+    </ul>
+  </section>
+
+  <section class="projects">
+    <h2>المشاريع</h2>
+    <div class="project">مشروع 1: تحرير فيديو احترافي</div>
+    <div class="project">مشروع 2: إنشاء رسومات متحركة</div>
+    <div class="project">مشروع 3: تحسين الألوان في الفيديوهات</div>
+  </section>
+
+  <footer>
+    <p id="footer-text">&copy; 2025 Cinertrix - جميع الحقوق محفوظة</p>
+  </footer>
+
+  <script>
+    function changeLanguage(lang) {
+      if (lang === 'ar') {
+        document.documentElement.lang = 'ar';
+        document.getElementById('header-title').innerText = 'Cinertrix';
+        document.getElementById('header-desc').innerText = 'محرر فيديو مبدع وموهوب';
+        document.getElementById('about-title').innerText = 'من أنا؟';
+        document.getElementById('about-desc').innerText = 'اسمي Cinertrix وأنا متخصص في تحرير الفيديو وصناعة المحتوى البصري. أتميز بتحويل المشاهد العادية إلى قصص مرئية مذهلة تجذب الانتباه وتُعبّر عن الأفكار بأسلوب احترافي وجذاب.';
+        document.getElementById('contact-btn').innerText = 'اتصل بي مباشرة';
+        document.getElementById('skills-title').innerText = 'المهارات';
+        document.getElementById('footer-text').innerText = '© 2025 Cinertrix - جميع الحقوق محفوظة';
+      } else {
+        document.documentElement.lang = 'en';
+        document.getElementById('header-title').innerText = 'Cinertrix';
+        document.getElementById('header-desc').innerText = 'Creative and talented video editor';
+        document.getElementById('about-title').innerText = 'Who am I?';
+        document.getElementById('about-desc').innerText = 'My name is Cinertrix, and I specialize in video editing and visual content creation. I am known for turning ordinary scenes into captivating visual stories that grab attention and express ideas in a professional and appealing way.';
+        document.getElementById('contact-btn').innerText = 'Contact Me Directly';
+        document.getElementById('skills-title').innerText = 'Skills';
+        document.getElementById('footer-text').innerText = '© 2025 Cinertrix - All rights reserved';
+      }
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+>
+
